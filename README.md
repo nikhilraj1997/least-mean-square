@@ -7,9 +7,9 @@ __Objective__
 ## Chosen Dataset
 _Epileptic Seizure Recognition Data Set_ found at [https://archive.ics.uci.edu/ml/datasets/Epileptic+Seizure+Recognition](https://archive.ics.uci.edu/ml/datasets/Epileptic+Seizure+Recognition)
 
-| __Data Set Characteristics:__  | Multivariate, Time-Series  | __Number of Instances:__  | 11500 | __Area:__               | Life       |
-| __Attribute Characteristics:__ | Integer, Real              | __Number of Attributes:__ | 179   | __Date Donated:__       | 2017-05-24 |
-| __Associated Tasks:__          | Classification, Clustering | __Missing Values?__       | N/A   | __Number of Web Hits:__ | 114640     |
+| Data Set Characteristics  | Number of Instances | Area | Attribute Characteristics | Number of Attributes | Date Donated | Associated Tasks           | Missing Values? | Number of Web Hits: |
+| ------------------------- | ------------------- | ---- | ------------------------- | -------------------- | ------------ | -------------------------- | --------------- | ------------------- |
+| Multivariate, Time-Series | 11500               | Life | Integer, Real             | 179                  | 2017-05-24   | Classification, Clustering | N/A             | 114640              |
 
 #### Attribute Information:
 The original dataset from the reference consists of 5 different folders, each with 100 files, with each file representing a single subject/person. Each file is a recording of brain activity for 23.6 seconds. The corresponding time-series is sampled into 4097 data points. Each data point is the value of the EEG recording at a different point in time. So we have total 500 individuals with each has 4097 data points for 23.5 seconds.
@@ -33,14 +33,12 @@ y contains the category of the 178-dimensional input vector. Specifically y in {
 All subjects falling in classes 2, 3, 4, and 5 are subjects who did not have epileptic seizure. Only subjects in class 1 have epileptic seizure. Our motivation for creating this version of the data was to simplify access to the data via the creation of a .csv version of it. Although there are 5 classes most authors have done binary classification, namely class 1 (Epileptic seizure) against the rest.
 
 ## lms.py
-Found in attachments.
-
 LMS classifier model to be used in a generalized form. 
 
-*Few things to note:* Although the model itself is a generalized one, it expects data to be normalized, otherwise there can be unexpected results
+*Note:* Although the model itself is a generalized one, it expects data to be normalized, otherwise there can be unexpected results
 
 ## epileptic_seizure.py
-The dataset was adapted and divided into input attributes and output lables. As there were multiple labels (2, 3, 4 and 5) in the dataset that denoted non-occurence of epileptic seizure and only one label (1) that denoted an occurence the output label was reduced down to two labels, where 1 denotes non-occurence and -1 denotes occurence
+The dataset was adapted and divided into input attributes and output lables. As there were multiple labels (2, 3, 4 and 5) in the dataset that denoted non-occurrence of epileptic seizure and only one label (1) that denoted an occurrence the output label was reduced down to two labels, where 1 denotes non-occurrence and -1 denotes occurrence
 
 The dataset was further normalized to decrease the difference between the maximum and the minimum values for each feature throughout the sample size
 
